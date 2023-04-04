@@ -1,0 +1,36 @@
+     SoilTemperature=0, //土壤温度（预留）
+
+        minusSoilTemperature = 1, //GndTemp_negative土壤温度为负数（预留）
+
+        CI = 2,//CI 丛生系数
+
+        Lai = 3,
+
+        AirTemperature = 4,//AirTemp 空气温度
+
+        minusAirTemperature = 5,//AirTemp_negative 空气温度为负数
+
+        SoilHumidity = 6,//GndHumi  土壤湿度（预留）
+
+        AirHumidity = 7,//AirHumi空气湿度（预留）
+
+        MTA = 8,//MTA 平均叶倾角
+
+        MTA_negative = 9,//MTA_negative 平均叶倾角为负数
+
+        Cover  = 10,//植被覆盖度
+
+        MLAI = 11,
+
+        BatA=12, //采集器电池电压
+
+        BatSys =13,// 汇聚节点电池电压
+
+        Rssi=14,
+
+        DIFN=15,
+注意事项：
+一期：使用BPower来表示RSSI的，使用rainfall来表示Cover，使用SoilTemperature来表示叶倾角
+使用AirHumidity来表示丛生系数.需要进行相应修改。
+SPower修改为BtaSys
+CI和Cover保留3位小数，温度1位小数，其余的2位小数

@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WirelessSensorNetworkModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="WirelessSensorNetworkEntities">
+    <EntitySet Name="sysdiagrams" EntityType="WirelessSensorNetworkModel.sysdiagram" />
+    <EntitySet Name="WSNCheckNodeAddresses" EntityType="WirelessSensorNetworkModel.WSNCheckNodeAddress" />
+    <EntitySet Name="WSNCheckNodeLosts" EntityType="WirelessSensorNetworkModel.WSNCheckNodeLost" />
+    <EntitySet Name="WSNCities" EntityType="WirelessSensorNetworkModel.WSNCity" />
+    <EntitySet Name="WSNDrawTopologyTables" EntityType="WirelessSensorNetworkModel.WSNDrawTopologyTable" />
+    <EntitySet Name="WSNEveryDayLais" EntityType="WirelessSensorNetworkModel.WSNEveryDayLai" />
+    <EntitySet Name="WSNLAIs" EntityType="WirelessSensorNetworkModel.WSNLAI" />
+    <EntitySet Name="WSNMail_Code" EntityType="WirelessSensorNetworkModel.WSNMail_Code" />
+    <EntitySet Name="WSNMessageRecevieTables" EntityType="WirelessSensorNetworkModel.WSNMessageRecevieTable" />
+    <EntitySet Name="WSNNeighborTables" EntityType="WirelessSensorNetworkModel.WSNNeighborTable" />
+    <EntitySet Name="WSNNodeLocationTables" EntityType="WirelessSensorNetworkModel.WSNNodeLocationTable" />
+    <EntitySet Name="WSNReadUploadDatas" EntityType="WirelessSensorNetworkModel.WSNReadUploadData" />
+    <EntitySet Name="WSNRouteTables" EntityType="WirelessSensorNetworkModel.WSNRouteTable" />
+    <EntitySet Name="WSNRTUploadDatas" EntityType="WirelessSensorNetworkModel.WSNRTUploadData" />
+    <EntitySet Name="WSNUploadDatas" EntityType="WirelessSensorNetworkModel.WSNUploadData" />
+    <EntitySet Name="WSNUsers" EntityType="WirelessSensorNetworkModel.WSNUser" />
+    <EntitySet Name="WSNUser_WSNCity" EntityType="WirelessSensorNetworkModel.WSNUser_WSNCity" />
+    <EntitySet Name="WSNEveryDayLaiBK20210910" EntityType="WirelessSensorNetworkModel.WSNEveryDayLaiBK20210910" />
+    <EntitySet Name="wsneverydaylaibk20211213" EntityType="WirelessSensorNetworkModel.wsneverydaylaibk20211213" />
+    <EntitySet Name="WSNTimeSetTables" EntityType="WirelessSensorNetworkModel.WSNTimeSetTable" />
+    <EntitySet Name="WSNImagesPaths" EntityType="WirelessSensorNetworkModel.WSNImagesPath" />
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="50" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="WSNCheckNodeAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CheckNode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNCheckNodeLost">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date_t" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Last_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNCity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WSNDrawTopologyTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UploadTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TopologyString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNEveryDayLai">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_t" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Lai" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNLAI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Updatatime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="Lai" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="LaiSort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WSNMail_Code">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sendmailaddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="authorizationcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WSNMessageRecevieTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageRecevieName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MessageRecevieSex" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MessageRecevieTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MessageRecevieMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NetAuthorityNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NetAuthorityRemark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WSNNeighborTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UploadTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FatherNode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ChildNode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WSNNodeLocationTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="NodeLocation" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CityID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WSNReadUploadData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UploadTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AirHumidity" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="AirTemperature" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SoilHumidity" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SoilTemperature" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="Rainfall" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="APower" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="BPower" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SPower" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="Lai" Type="Decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="WSNRouteTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UploadTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SourceNode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NextNode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TargetNode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WSNRTUploadData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UploadTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AirHumidity" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="AirTemperature" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SoilHumidity" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SoilTemperature" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="Rainfall" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="APower" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="BPower" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SPower" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="Lai" Type="Decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="WSNUploadData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UploadTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AirHumidity" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="AirTemperature" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SoilHumidity" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SoilTemperature" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="Rainfall" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="APower" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="RSSI" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="SPower" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="Lai" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="CI" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="DIFN" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="MLai" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="MTA" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="BPower" Type="Decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="WSNUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNUser_WSNCity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="DFSelected" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNEveryDayLaiBK20210910">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NodeAddress" />
+      <PropertyRef Name="Date_t" />
+      <PropertyRef Name="Lai" />
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_t" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Lai" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wsneverydaylaibk20211213">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NodeAddress" />
+      <PropertyRef Name="Date_t" />
+      <PropertyRef Name="Lai" />
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_t" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Lai" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNTimeSetTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SleepTime" Type="Int32" Nullable="false" />
+    <Property Name="CollectTime" Type="Int32" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="NodeID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNImagesPath">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="UploadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ImageName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NodeAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

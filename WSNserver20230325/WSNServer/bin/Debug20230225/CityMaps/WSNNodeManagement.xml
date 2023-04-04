@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WSNNodeManagement>
+  <Setting>
+    <title>城市数量</title>
+    <Number>15</Number>
+  </Setting>
+  <Setting>
+    <title>网络节点</title>
+    
+    <WSN ID="1">
+      <Node>0000</Node>
+      <Node>0101</Node>
+      <Node>0102</Node>
+      <Node>0103</Node>
+      <Node>0104</Node>
+      <Node>0105</Node>
+      <Node>0106</Node>
+      <Node>0107</Node>
+      <Node>0108</Node>
+      <Node>0109</Node>
+      <Node>010A</Node>
+    </WSN>
+    
+    <WSN ID="2">
+      <Node>0200</Node>
+      <Node>0201</Node>
+      <Node>0202</Node>
+      <Node>0203</Node>
+      <Node>0204</Node>
+      <Node>0205</Node>
+      <Node>0206</Node>
+      <Node>0207</Node>
+      <Node>0208</Node>
+      <Node>0209</Node>
+      <Node>020A</Node>
+    </WSN>
+    
+    <WSN ID="3">
+      <Node>0300</Node>
+	<Node>0301</Node>
+	<Node>0302</Node>
+	<Node>0303</Node>
+	<Node>0304</Node>
+	<Node>0305</Node>
+	<Node>0306</Node>
+	<Node>0307</Node>
+	<Node>0308</Node>
+	<Node>0309</Node>
+	<Node>030A</Node>
+
+      
+    </WSN>
+    <WSN ID="4">
+      <Node>0400</Node>
+      <Node>0401</Node>
+      <Node>0402</Node>
+      <Node>0403</Node>
+      <Node>0404</Node>
+      <Node>0405</Node>
+      <Node>0406</Node>
+      <Node>0407</Node>
+      <Node>0408</Node>
+      <Node>0409</Node>
+      <Node>040A</Node>
+    </WSN>
+
+    <WSN ID="5">
+
+      <Node>0500</Node>
+      <Node>0501</Node>
+      <Node>0502</Node>
+      <Node>0503</Node>
+      <Node>0504</Node>
+      <Node>0505</Node>
+      <Node>0506</Node>
+      <Node>0507</Node>
+      <Node>0508</Node>
+      <Node>0509</Node>
+      <Node>050A</Node>
+    </WSN>
+
+    <WSN ID="6">
+
+      <Node>0600</Node>
+      <Node>0601</Node>
+      <Node>0602</Node>
+      <Node>0603</Node>
+      <Node>0604</Node>
+      <Node>0605</Node>
+      <Node>0606</Node>
+      <Node>0607</Node>
+      <Node>0608</Node>
+      <Node>0609</Node>
+      <Node>060A</Node>
+    </WSN>
+
+    <WSN ID="7">
+
+      <Node>0700</Node>
+      <Node>0701</Node>
+      <Node>0702</Node>
+      <Node>0703</Node>
+      <Node>0704</Node>
+      <Node>0705</Node>
+      <Node>0706</Node>
+      <Node>0707</Node>
+      <Node>0708</Node>
+      <Node>0709</Node>
+      <Node>070A</Node>
+    </WSN>
+
+    <WSN ID="8">
+
+      <Node>0800</Node>
+      <Node>0801</Node>
+      <Node>0802</Node>
+      <Node>0803</Node>
+      <Node>0804</Node>
+      <Node>0805</Node>
+      <Node>0806</Node>
+      <Node>0807</Node>
+      <Node>0808</Node>
+      <Node>0809</Node>
+      <Node>080A</Node>
+    </WSN>
+
+    <WSN ID="9">
+
+      <Node>0900</Node>
+      <Node>0901</Node>
+      <Node>0902</Node>
+      <Node>0903</Node>
+      <Node>0904</Node>
+      <Node>0905</Node>
+      <Node>0906</Node>
+      <Node>0907</Node>
+      <Node>0908</Node>
+      <Node>0909</Node>
+      <Node>090A</Node>
+    </WSN>
+
+    <WSN ID="10">
+
+      <Node>0A00</Node>
+      <Node>0A01</Node>
+      <Node>0A02</Node>
+      <Node>0A03</Node>
+      <Node>0A04</Node>
+      <Node>0A05</Node>
+      <Node>0A06</Node>
+      <Node>0A07</Node>
+      <Node>0A08</Node>
+      <Node>0A09</Node>
+      <Node>0A0A</Node>
+    </WSN>
+
+    <WSN ID="11">
+
+      <Node>0B00</Node>
+      <Node>0B01</Node>
+      <Node>0B02</Node>
+      <Node>0B03</Node>
+      <Node>0B04</Node>
+      <Node>0B05</Node>
+      <Node>0B06</Node>
+      <Node>0B07</Node>
+      <Node>0B08</Node>
+      <Node>0B09</Node>
+      <Node>0B0A</Node>
+    </WSN>
+
+    <WSN ID="12">
+
+      <Node>0C00</Node>
+      <Node>0C01</Node>
+      <Node>0C02</Node>
+      <Node>0C03</Node>
+      <Node>0C04</Node>
+      <Node>0C05</Node>
+      <Node>0C06</Node>
+      <Node>0C07</Node>
+      <Node>0C08</Node>
+      <Node>0C09</Node>
+      <Node>0C0A</Node>
+    </WSN>
+
+    <WSN ID="13">
+
+      <Node>0D00</Node>
+      <Node>0D01</Node>
+      <Node>0D02</Node>
+      <Node>0D03</Node>
+      <Node>0D04</Node>
+      <Node>0D05</Node>
+      <Node>0D06</Node>
+      <Node>0D07</Node>
+      <Node>0D08</Node>
+      <Node>0D09</Node>
+      <Node>0D0A</Node>
+    </WSN>
+
+    <WSN ID="14">
+
+      <Node>0E00</Node>
+      <Node>0E01</Node>
+      <Node>0E02</Node>
+      <Node>0E03</Node>
+      <Node>0E04</Node>
+      <Node>0E05</Node>
+      <Node>0E06</Node>
+      <Node>0E07</Node>
+      <Node>0E08</Node>
+      <Node>0E09</Node>
+      <Node>0E0A</Node>
+    </WSN>
+
+    <WSN ID="15">
+      <Node>0F00</Node>
+      <Node>0F01</Node>
+      <Node>0F02</Node>
+      <Node>0F03</Node>
+      <Node>0F04</Node>
+      <Node>0F05</Node>
+      <Node>0F06</Node>
+      <Node>0F07</Node>
+      <Node>0F08</Node>
+      <Node>0F09</Node>
+      <Node>0F0A</Node>
+    </WSN>
+  </Setting>
+  <Setting>
+    <title>节点配置</title>
+  </Setting>
+  <Setting>
+    <title>采样间隔</title>
+  </Setting>
+  <Setting>
+    <title>数据库配置</title>
+  </Setting>
+</WSNNodeManagement>

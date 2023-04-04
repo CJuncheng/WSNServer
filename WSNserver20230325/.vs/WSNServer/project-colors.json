@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b601d4a3-23a0-4ce9-b45b-f0556ca09ba5": {
+      "ProjectGuid": "b601d4a3-23a0-4ce9-b45b-f0556ca09ba5",
+      "DisplayName": "WSNServer",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

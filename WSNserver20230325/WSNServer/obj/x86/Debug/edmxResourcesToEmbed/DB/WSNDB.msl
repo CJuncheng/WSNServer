@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WirelessSensorNetworkModelStoreContainer" CdmEntityContainer="WirelessSensorNetworkEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagram">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNCheckNodeAddresses">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNCheckNodeAddress">
+        <MappingFragment StoreEntitySet="WSNCheckNodeAddress">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CheckNode" ColumnName="CheckNode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNCheckNodeLosts">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNCheckNodeLost">
+        <MappingFragment StoreEntitySet="WSNCheckNodeLost">
+          <ScalarProperty Name="Last_id" ColumnName="Last_id" />
+          <ScalarProperty Name="Date_t" ColumnName="Date_t" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNCities">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNCity">
+        <MappingFragment StoreEntitySet="WSNCity">
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNDrawTopologyTables">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNDrawTopologyTable">
+        <MappingFragment StoreEntitySet="WSNDrawTopologyTable">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="TopologyString" ColumnName="TopologyString" />
+          <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNEveryDayLais">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNEveryDayLai">
+        <MappingFragment StoreEntitySet="WSNEveryDayLai">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Lai" ColumnName="Lai" />
+          <ScalarProperty Name="Date_t" ColumnName="Date_t" />
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNLAIs">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNLAI">
+        <MappingFragment StoreEntitySet="WSNLAI">
+          <ScalarProperty Name="LaiSort" ColumnName="LaiSort" />
+          <ScalarProperty Name="Lai" ColumnName="Lai" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Updatatime" ColumnName="Updatatime" />
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNMail_Code">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNMail_Code">
+        <MappingFragment StoreEntitySet="WSNMail_Code">
+          <ScalarProperty Name="authorizationcode" ColumnName="authorizationcode" />
+          <ScalarProperty Name="sendmailaddress" ColumnName="sendmailaddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNMessageRecevieTables">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNMessageRecevieTable">
+        <MappingFragment StoreEntitySet="WSNMessageRecevieTable">
+          <ScalarProperty Name="NetAuthorityRemark" ColumnName="NetAuthorityRemark" />
+          <ScalarProperty Name="NetAuthorityNum" ColumnName="NetAuthorityNum" />
+          <ScalarProperty Name="MessageRecevieMail" ColumnName="MessageRecevieMail" />
+          <ScalarProperty Name="MessageRecevieTel" ColumnName="MessageRecevieTel" />
+          <ScalarProperty Name="MessageRecevieSex" ColumnName="MessageRecevieSex" />
+          <ScalarProperty Name="MessageRecevieName" ColumnName="MessageRecevieName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNNeighborTables">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNNeighborTable">
+        <MappingFragment StoreEntitySet="WSNNeighborTable">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ChildNode" ColumnName="ChildNode" />
+          <ScalarProperty Name="FatherNode" ColumnName="FatherNode" />
+          <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNNodeLocationTables">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNNodeLocationTable">
+        <MappingFragment StoreEntitySet="WSNNodeLocationTable">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="NodeLocation" ColumnName="NodeLocation" />
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNReadUploadDatas">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNReadUploadData">
+        <MappingFragment StoreEntitySet="WSNReadUploadData">
+          <ScalarProperty Name="Lai" ColumnName="Lai" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="SPower" ColumnName="SPower" />
+          <ScalarProperty Name="BPower" ColumnName="BPower" />
+          <ScalarProperty Name="APower" ColumnName="APower" />
+          <ScalarProperty Name="Rainfall" ColumnName="Rainfall" />
+          <ScalarProperty Name="SoilTemperature" ColumnName="SoilTemperature" />
+          <ScalarProperty Name="SoilHumidity" ColumnName="SoilHumidity" />
+          <ScalarProperty Name="AirTemperature" ColumnName="AirTemperature" />
+          <ScalarProperty Name="AirHumidity" ColumnName="AirHumidity" />
+          <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNRouteTables">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNRouteTable">
+        <MappingFragment StoreEntitySet="WSNRouteTable">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="TargetNode" ColumnName="TargetNode" />
+          <ScalarProperty Name="NextNode" ColumnName="NextNode" />
+          <ScalarProperty Name="SourceNode" ColumnName="SourceNode" />
+          <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNRTUploadDatas">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNRTUploadData">
+        <MappingFragment StoreEntitySet="WSNRTUploadData">
+          <ScalarProperty Name="Lai" ColumnName="Lai" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="SPower" ColumnName="SPower" />
+          <ScalarProperty Name="BPower" ColumnName="BPower" />
+          <ScalarProperty Name="APower" ColumnName="APower" />
+          <ScalarProperty Name="Rainfall" ColumnName="Rainfall" />
+          <ScalarProperty Name="SoilTemperature" ColumnName="SoilTemperature" />
+          <ScalarProperty Name="SoilHumidity" ColumnName="SoilHumidity" />
+          <ScalarProperty Name="AirTemperature" ColumnName="AirTemperature" />
+          <ScalarProperty Name="AirHumidity" ColumnName="AirHumidity" />
+          <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNUploadDatas">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNUploadData">
+        <MappingFragment StoreEntitySet="WSNUploadData">
+          <ScalarProperty Name="BPower" ColumnName="BPower" />
+          <ScalarProperty Name="MTA" ColumnName="MTA" />
+          <ScalarProperty Name="MLai" ColumnName="MLai" />
+          <ScalarProperty Name="DIFN" ColumnName="DIFN" />
+          <ScalarProperty Name="CI" ColumnName="CI" />
+          <ScalarProperty Name="Lai" ColumnName="Lai" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="SPower" ColumnName="SPower" />
+          <ScalarProperty Name="RSSI" ColumnName="RSSI" />
+          <ScalarProperty Name="APower" ColumnName="APower" />
+          <ScalarProperty Name="Rainfall" ColumnName="Rainfall" />
+          <ScalarProperty Name="SoilTemperature" ColumnName="SoilTemperature" />
+          <ScalarProperty Name="SoilHumidity" ColumnName="SoilHumidity" />
+          <ScalarProperty Name="AirTemperature" ColumnName="AirTemperature" />
+          <ScalarProperty Name="AirHumidity" ColumnName="AirHumidity" />
+          <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNUsers">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNUser">
+        <MappingFragment StoreEntitySet="WSNUser">
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNUser_WSNCity">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNUser_WSNCity">
+        <MappingFragment StoreEntitySet="WSNUser_WSNCity">
+          <ScalarProperty Name="DFSelected" ColumnName="DFSelected" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNEveryDayLaiBK20210910">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNEveryDayLaiBK20210910">
+        <MappingFragment StoreEntitySet="WSNEveryDayLaiBK20210910">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Lai" ColumnName="Lai" />
+          <ScalarProperty Name="Date_t" ColumnName="Date_t" />
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wsneverydaylaibk20211213">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.wsneverydaylaibk20211213">
+        <MappingFragment StoreEntitySet="wsneverydaylaibk20211213">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Lai" ColumnName="Lai" />
+          <ScalarProperty Name="Date_t" ColumnName="Date_t" />
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNTimeSetTables">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNTimeSetTable">
+        <MappingFragment StoreEntitySet="WSNTimeSetTable">
+          <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CollectTime" ColumnName="CollectTime" />
+          <ScalarProperty Name="SleepTime" ColumnName="SleepTime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WSNImagesPaths">
+      <EntityTypeMapping TypeName="WirelessSensorNetworkModel.WSNImagesPath">
+        <MappingFragment StoreEntitySet="WSNImagesPath">
+          <ScalarProperty Name="NodeAddress" ColumnName="NodeAddress" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

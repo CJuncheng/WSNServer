@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WirelessSensorNetworkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="binary" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WSNCheckNodeAddress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckNode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNCheckNodeLost">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_t" Type="date" Nullable="false" />
+    <Property Name="Last_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNCity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WSNDrawTopologyTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UploadTime" Type="datetime" Nullable="false" />
+    <Property Name="TopologyString" Type="nvarchar(max)" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNEveryDayLai">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NodeAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_t" Type="date" Nullable="false" />
+    <Property Name="Lai" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“WirelessSensorNetwork.dbo.WSNEveryDayLaiBK20210910”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="WSNEveryDayLaiBK20210910">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NodeAddress" />
+      <PropertyRef Name="Date_t" />
+      <PropertyRef Name="Lai" />
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NodeAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_t" Type="date" Nullable="false" />
+    <Property Name="Lai" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“WirelessSensorNetwork.dbo.wsneverydaylaibk20211213”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="wsneverydaylaibk20211213">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NodeAddress" />
+      <PropertyRef Name="Date_t" />
+      <PropertyRef Name="Lai" />
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NodeAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_t" Type="date" Nullable="false" />
+    <Property Name="Lai" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNImagesPath">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="UploadDate" Type="datetime" Nullable="false" />
+    <Property Name="ImageName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NodeAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNLAI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NodeAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Updatatime" Type="datetime" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="Lai" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="LaiSort" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WSNMail_Code">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sendmailaddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="authorizationcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNMessageRecevieTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageRecevieName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MessageRecevieSex" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MessageRecevieTel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MessageRecevieMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="NetAuthorityNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NetAuthorityRemark" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNNeighborTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UploadTime" Type="datetime" Nullable="false" />
+    <Property Name="FatherNode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ChildNode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CityID" Type="int" />
+  </EntityType>
+  <EntityType Name="WSNNodeLocationTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NodeAddress" Type="nchar" MaxLength="4" Nullable="false" />
+    <Property Name="NodeLocation" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CityID" Type="int" />
+  </EntityType>
+  <EntityType Name="WSNReadUploadData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NodeAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UploadTime" Type="datetime" Nullable="false" />
+    <Property Name="AirHumidity" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="AirTemperature" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SoilHumidity" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SoilTemperature" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Rainfall" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="APower" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="BPower" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SPower" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="Lai" Type="decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="WSNRouteTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UploadTime" Type="datetime" Nullable="false" />
+    <Property Name="SourceNode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NextNode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TargetNode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CityID" Type="int" />
+  </EntityType>
+  <EntityType Name="WSNRTUploadData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NodeAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UploadTime" Type="datetime" Nullable="false" />
+    <Property Name="AirHumidity" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="AirTemperature" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SoilHumidity" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SoilTemperature" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Rainfall" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="APower" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="BPower" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SPower" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="Lai" Type="decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="WSNTimeSetTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SleepTime" Type="int" Nullable="false" />
+    <Property Name="CollectTime" Type="int" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="NodeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNUploadData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NodeAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UploadTime" Type="datetime" Nullable="false" />
+    <Property Name="AirHumidity" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="AirTemperature" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SoilHumidity" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SoilTemperature" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Rainfall" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="APower" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="RSSI" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SPower" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="Lai" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CI" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="DIFN" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="MLai" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="MTA" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="BPower" Type="decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="WSNUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WSNUser_WSNCity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="DFSelected" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WirelessSensorNetworkModelStoreContainer">
+    <EntitySet Name="sysdiagram" EntityType="Self.sysdiagram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNCheckNodeAddress" EntityType="Self.WSNCheckNodeAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNCheckNodeLost" EntityType="Self.WSNCheckNodeLost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNCity" EntityType="Self.WSNCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNDrawTopologyTable" EntityType="Self.WSNDrawTopologyTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNEveryDayLai" EntityType="Self.WSNEveryDayLai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNImagesPath" EntityType="Self.WSNImagesPath" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNLAI" EntityType="Self.WSNLAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNMail_Code" EntityType="Self.WSNMail_Code" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNMessageRecevieTable" EntityType="Self.WSNMessageRecevieTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNNeighborTable" EntityType="Self.WSNNeighborTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNNodeLocationTable" EntityType="Self.WSNNodeLocationTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNReadUploadData" EntityType="Self.WSNReadUploadData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNRouteTable" EntityType="Self.WSNRouteTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNRTUploadData" EntityType="Self.WSNRTUploadData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNTimeSetTable" EntityType="Self.WSNTimeSetTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNUploadData" EntityType="Self.WSNUploadData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNUser" EntityType="Self.WSNUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNUser_WSNCity" EntityType="Self.WSNUser_WSNCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WSNEveryDayLaiBK20210910" EntityType="Self.WSNEveryDayLaiBK20210910" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[WSNEveryDayLaiBK20210910].[ID] AS [ID], 
+[WSNEveryDayLaiBK20210910].[NodeAddress] AS [NodeAddress], 
+[WSNEveryDayLaiBK20210910].[Date_t] AS [Date_t], 
+[WSNEveryDayLaiBK20210910].[Lai] AS [Lai], 
+[WSNEveryDayLaiBK20210910].[CityID] AS [CityID]
+FROM [dbo].[WSNEveryDayLaiBK20210910] AS [WSNEveryDayLaiBK20210910]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="wsneverydaylaibk20211213" EntityType="Self.wsneverydaylaibk20211213" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[wsneverydaylaibk20211213].[ID] AS [ID], 
+[wsneverydaylaibk20211213].[NodeAddress] AS [NodeAddress], 
+[wsneverydaylaibk20211213].[Date_t] AS [Date_t], 
+[wsneverydaylaibk20211213].[Lai] AS [Lai], 
+[wsneverydaylaibk20211213].[CityID] AS [CityID]
+FROM [dbo].[wsneverydaylaibk20211213] AS [wsneverydaylaibk20211213]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
